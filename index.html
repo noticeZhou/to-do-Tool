@@ -11,14 +11,9 @@
     <body>
     	<header>GTD Tools</header>
     	<div id="classDiv">
-            <h5>所有任务(<span>task.num<span>)</h5>
+            <h5 id="all">所有任务(<span></span>)</h5>
             <h5>分类列表</h5>
-            <p>百度IFE(<span>task.num<span>)</p>
-            <ul>
-                <li class="active">3</li>
-                <li>3</li>
-                <li>3</li>
-            </ul>
+            <div id="dis-cate"></div>
             <div id="add-class">添加分类</div>
         </div>
         <div id="taskDiv">
@@ -27,29 +22,22 @@
                 <span id="yes-tasks">已完成</span>
                 <span id="no-tasks">未完成</span>
             </div>
-            <ul class="task-by-date">
-                <li class="date">2015-12-12</li>
-                <li>task1</li>
-                <li class="finish">task1</li>
-                <li class="date">2015-12-23</li>
-                <li>task1</li>
-                <li>task1</li>
-            </ul>
+            <ul id="task-by-date"></ul>
             <div id="add-class">添加任务</div>
         </div>
         <div id="detailDiv">
             <div id="detail-title">
-                <h3>title</h3>
+                <h3></h3>
                 <img src="img/finish.png" id="task-get">
                 <img src="img/edit.png" id="task-edit">
             </div>
-            <p id="detail-date">2015-12-12</p>
-            <p id="detail-content">some take content</p>
+            <p id="detail-date"></p>
+            <p id="detail-content"></p>
         </div>
         <form id="editDiv">
-            <p id="edit-title">任务名称：<input value="task1"></p>
-            <p id="edit-date">任务时间：<input value="2015-12-12"></p>
-            <textarea id="edit-content">some task</textarea>
+            <p id="edit-title"></p>
+            <p id="edit-date"></p>
+            <textarea id="edit-content"></textarea>
             <input id="cancel-btn" type="button" value="放弃">
             <input id="ok-btn" type="button" value="提交">
         </form>
