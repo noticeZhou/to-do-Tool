@@ -216,10 +216,10 @@ function task_edit() {
     var task_name = this.parentNode.getElementsByTagName("h3")[0].innerHTML;
     for(var i=0;i<task.length;i++) {
         if(task[i].name === task_name) {
-            title_edit.innerHTML = "任务名称：<input value="+task[i].name+">";
+            var tname = task[i].name.replace(/\s/g,'&nbsp;');
+            title_edit.innerHTML = "任务名称：<input value="+tname+">";
             date_edit.innerHTML = "任务时间：<input value="+task[i].date+">";
             content_edit.innerHTML = task[i].content;
-            console.log(task[i].name,task[i].date,task[i].content);
         }
     }
     
