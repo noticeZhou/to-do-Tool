@@ -219,7 +219,7 @@ function task_edit() {
             title_edit.innerHTML = "任务名称：<input value="+task[i].name+">";
             date_edit.innerHTML = "任务时间：<input value="+task[i].date+">";
             content_edit.innerHTML = task[i].content;
-            console.log(task[i].name,task[i].date,task[i].content)
+            console.log(task[i].name,task[i].date,task[i].content);
         }
     }
     
