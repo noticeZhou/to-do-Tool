@@ -101,6 +101,7 @@ function save() {
 }
 //展示所有的task
 function makeAll() {
+    reset();
     choosed_cate = -1;
     var date = [];
     for(var i=0,len=task.length;i<len;i++) {
@@ -112,6 +113,7 @@ function makeAll() {
 }
 //展示分类----父类
 function displayCate() {
+    reset();
     var dis_cate = document.getElementById("dis-cate");
     if(dis_cate.innerHTML != "") {
         dis_cate.innerHTML = "";
@@ -144,8 +146,8 @@ function displayCate() {
 }
 //展示子类的事件函数
 function child_cate() {
+    reset();
     choosed_cate = this.id;
-    console.log(choosed_cate);
 
     var cate_div = this.parentNode.getElementsByTagName("ul");
     if(cate_div.length === 0) {
@@ -316,8 +318,8 @@ function display_byDate(date) {
 }
 //展示父类的所有事件的事件函数
 function displayTask() {
+    reset();
     choosed_cate = this.id;
-    console.log(choosed_cate);
     var date =[];
     var date_task =[];
     for(var i=0;i<task.length;i++) {
@@ -505,24 +507,35 @@ function choose() {
     var yes_tasks = document.getElementById("yes-tasks");
     var no_tasks = document.getElementById("no-tasks");
     var child = [];
-    for(var i=0,len=cate.length;i<len;i++) {
-        if(cate[i].id == choosed_cate) {
-            child = cate[i].child;
-        }
-    }
+
     EventUtil.addHandler(yes_tasks,"click",function() {
+        for(var i=0,len=cate.length;i<len;i++) {
+            if(cate[i].id == choosed_cate) {
+                child = cate[i].child;
+            }
+        }
         all_tasks.className = "";
         no_tasks.className = "";
         yes_tasks.className = "active";
         dis_choose(true,child);
     });
     EventUtil.addHandler(no_tasks,"click",function() {
+        for(var i=0,len=cate.length;i<len;i++) {
+            if(cate[i].id == choosed_cate) {
+                child = cate[i].child;
+            }
+        }
         all_tasks.className = "";
         no_tasks.className = "active";
         yes_tasks.className = "";
         dis_choose(false,child);
     });
     EventUtil.addHandler(all_tasks,"click",function() {
+        for(var i=0,len=cate.length;i<len;i++) {
+            if(cate[i].id == choosed_cate) {
+                child = cate[i].child;
+            }
+        }
         all_tasks.className = "active";
         no_tasks.className = "";
         yes_tasks.className = "";
@@ -536,8 +549,8 @@ function dis_choose(status,child) {
     var task_list = document.getElementById("task-by-date");
     task_list.innerHTML = "";
     for(var i=0,len=task.length;i<len;i++) {
-        if((task[i].finish === status || status === "all") && (task[i].cate == choosed_cate || choosed_cate === -1 || 
-            child.indexOf(task[i].cate) != -1)) {
+        if((task[i].finish === status || status === "all") && (task[i].cate == choosed_cate || 
+            choosed_cate === -1 || child.indexOf(task[i].cate) != -1)) {
             if(date.indexOf(task[i].date) === -1) {
                 date.push(task[i].date);
                 var task_date = document.createElement("li");
@@ -569,4 +582,13 @@ function dis_choose(status,child) {
             }
         }
     }
+}
+
+function reset() {
+    var all_tasks = document.getElementById("all-tasks");
+    var yes_tasks = document.getElementById("yes-tasks");
+    var no_tasks = document.getElementById("no-tasks");
+    all_tasks.className = "active";
+    no_tasks.className = "";
+    yes_tasks.className = "";
 }
