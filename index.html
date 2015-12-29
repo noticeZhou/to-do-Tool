@@ -14,6 +14,14 @@
             <h5 id="all">所有任务(<span></span>)</h5>
             <h5>分类列表</h5>
             <div id="dis-cate"></div>
+            <div id="det-div">
+                <div class="nav-div">删除分类</div>
+                <div class="inter-div">
+                    <p>确定要删除该分类及其所有任务？</p>
+                    <input type="button" id="cate-exit" value="放弃">
+                    <input type="button" id="cate-ok" value="确定">
+                </div>
+            </div>
             <div id="add-class">添加分类</div>
         </div>
         <div id="taskDiv">
@@ -33,6 +41,14 @@
             </div>
             <p id="detail-date"></p>
             <p id="detail-content"></p>
+            <div id="ok-div">
+                <div class="nav-div">完成任务</div>
+                <div class="inter-div">
+                    <p>确定已经完成任务？</p>
+                    <input type="button" id="task-exit" value="放弃">
+                    <input type="button" id="task-ok" value="确定">
+                </div>
+            </div>
         </div>
         <form id="editDiv">
             <p id="edit-title"></p>
@@ -41,6 +57,18 @@
             <input id="cancel-btn" type="button" value="放弃">
             <input id="ok-btn" type="button" value="提交">
         </form>
+        <div id="cate-div">
+            <div class="nav-div">新增分类</div>
+            <p>新分类名称：<input type="text" id="class-name"></p>
+            <p>新分类父类：
+                <select id="cate-parent">
+                    <option>无</option>
+                </select>
+            </p>
+            <button id="cate-eit">取消</button>
+            <button id="cate-save">确定</button>
+        </div>
+        <div id="overlay"></div>
     	<script src="js/eventUtil.js"></script>
         <script src="js/gtd.js"></script>
     </body>
