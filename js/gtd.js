@@ -147,8 +147,13 @@ function displayCate() {
 //展示子类的事件函数
 function child_cate() {
     reset();
+    cho_cate = choosed_cate;
     choosed_cate = this.id;
-
+    if(choosed_cate !== cho_cate && cho_cate !== -1) {
+        var choo = document.getElementById(cho_cate);
+        choo.className = "";
+    }
+    this.className = "active"; 
     var cate_div = this.parentNode.getElementsByTagName("ul");
     if(cate_div.length === 0) {
         var cateul = document.createElement("ul");
@@ -319,7 +324,14 @@ function display_byDate(date) {
 //展示父类的所有事件的事件函数
 function displayTask() {
     reset();
+    cho_cate = choosed_cate;
     choosed_cate = this.id;
+
+    if(choosed_cate !== cho_cate && cho_cate !== -1) {
+        var choo = document.getElementById(cho_cate);
+        choo.className = "";
+    }
+    this.className = "active"; 
     var date =[];
     var date_task =[];
     for(var i=0;i<task.length;i++) {
