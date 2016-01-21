@@ -1,0 +1,284 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style-type: none;
+}
+header {
+	width: 100%;
+	height: 60px;
+	background-color: #d8d2d1;
+	border-radius: 5px;
+	font-size: 21px;
+	line-height: 50px;
+	padding-left: 30px;
+	color: #aba2a0;
+}
+
+#classDiv {
+	width: 200px;
+	position: absolute;
+	top: 60px;
+	bottom: 0;
+	background-color: #E6E6E6;
+}
+#classDiv h5 {
+	margin: 10px 5px;
+	cursor: pointer;
+}
+#classDiv p {
+	width: 100%;
+	height: 32px;
+	padding-left: 36px;
+	line-height: 32px;
+	font-size: 15px;
+	background: url(../img/folder.png) no-repeat left;
+	cursor: pointer;
+}
+#classDiv li {
+	padding-left: 70px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	background: url(../img/child_folder.png) no-repeat 30px;
+	cursor: pointer;
+}
+#classDiv .active {
+	background-color: #fff;
+}
+#dis-cate img {
+	position: absolute;
+	right: 0;
+	display: none;
+}
+#add-class,#add-div {
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	position: absolute;
+	bottom: 0;
+	padding-left: 40px;
+	background: url(../img/add.png) no-repeat 10px;
+	cursor: pointer;
+}
+
+#taskDiv {
+	width: 230px;
+	position: absolute;
+	left: 200px;
+	top: 60px;
+	bottom: 0;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+}
+#nav {
+	background-color: #ccc;
+	width: 100%;
+	height: 40px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+#nav span {
+	box-sizing: border-box;
+	padding: 0 5px;
+	margin: 0 10px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 13px;
+	border-radius: 4px;
+	display: inline-block;
+	cursor: pointer;
+}
+#nav .active {
+	background-color: #fff;
+}
+#task-by-date li{
+	box-sizing: border-box;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 30px;
+	border: 1px solid #c2d29e;
+	cursor: pointer;
+}
+#task-by-date .date {
+	box-sizing: border-box;
+	background-color: #E0DEC0;
+	padding-left: 10px;
+}
+#task-by-date .finish {
+    color: #008000;
+    font-weight: bold;
+    background: #d6f183 url(../img/get.png) no-repeat right;
+}
+
+#detailDiv {
+	margin-left: 432px;
+	display: none;
+}
+#detail-title {
+	height: 50px;
+	padding-left: 20px;
+	background-color: #C2C2BE;
+	line-height: 50px;
+}
+#detail-title h3 {
+    display: inline;
+}
+#detail-title img {
+	margin: 10px;
+	width: 30px;
+	height: 30px;
+	float: right;
+	cursor: pointer;
+}
+#detail-date {
+	height: 50px;
+	padding-left: 20px;
+	background-color: #E0DEC0;
+	line-height: 50px;
+}
+#detail-content {
+	padding: 5px 20px;
+}
+#ok-div {
+	width: 300px;
+	height: 200px;
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+	margin-left: 100px;	
+	display: none;
+	z-index: 10;
+}
+#det-div {
+	background-color: yellow;
+	width: 300px;
+	height: 200px;
+	border: 10px solid red;
+	border-radius: 5px;
+	display: none;
+	z-index: 10;
+	margin-left: 450px;
+}
+#ok-div .nav-div {
+	height: 30px;
+	background-color: #bde936; 
+	text-align: center;
+}
+#det-div p {
+	width: 240px;
+	overflow: hidden;
+}
+.inter-div p {
+	margin: 10px;
+	text-align: center;
+}
+.inter-div input[type="button"] {
+	width: 80px;
+	height: 30px;
+	background-color: #bde936;
+	float: right;
+	margin: 80px 10px 0;
+	cursor: pointer;
+	outline: none;
+	border-radius: 10px;
+}
+
+#editDiv {
+	margin-left: 432px;
+	display: none;
+}
+#editDiv p {
+	box-sizing: border-box;
+	height: 50px;
+	padding: 10px;
+}
+#edit-title {
+	background-color: #C2C2BE;
+}
+#edit-date {
+	background-color: #E0DEC0;
+}
+#editDiv input {
+	width: 60%;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	padding: 0 10px;
+}
+#editDiv input[type="button"] {
+	width: 100px;
+	height: 40px;
+	background-color: #bde936;
+	float: right;
+	margin: 20px 20px;
+	cursor: pointer;
+	outline: none;
+	border-radius: 10px;
+}
+#edit-content {
+	width: 100%;
+	height: 250px;
+	padding: 10px;
+}
+
+#cate-div {
+	width: 300px;
+	height: 200px;
+	border-radius: 5px;
+	outline: none;
+	background-color: #e6e6e6;
+	position: relative;
+	top: 100px;
+	margin: 0 auto;
+	display: none;
+	z-index: 10;
+	text-align: center;
+}
+#cate-div p {
+	margin: 10px;
+}
+#cate-div input,
+#cate-div select {
+	width: 60%;
+	height: 30px;
+	padding: 0;
+}
+#cate-div button {
+	width: 60px;
+	height: 25px;
+	margin-left: 15px;
+	border-radius: 5px;
+	background-color: #03a9f4;
+	position: relative;
+	top: 35px;
+	left: 60px;
+	cursor: pointer;
+}
+#cate-div .nav-div {
+	height: 30px;
+	background-color: #bde936; 
+	text-align: center;
+}
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #000;
+	opacity: 0.7;
+	display: none;
+}
+
+#edit-cate {
+	display: none;
+}
+#edit-cate select {
+	width: 60%;
+	height: 30px;
+	font-size: 16px;
+	line-height: 30px;
+	padding: 0 10px;
+}
