@@ -3,6 +3,7 @@
  */
 //use localStorage and Json to storage data
 // cate 表示分类，包含子类和父类
+//task表示任务
 var cate,task;
 var cateText = '['
     + '{'
@@ -10,7 +11,7 @@ var cateText = '['
     +     '"name": "默认分类",'
     +     '"child": [2],'
     +     '"father": -1,'
-    +     '"count": 0'
+    +     '"count": 1'
     + '},'
     + '{'
     +     '"id": 1,'
@@ -24,7 +25,7 @@ var cateText = '['
     +     '"name": "默认子分类",'
     +     '"child": [],'
     +     '"father": 0,'
-    +     '"count": 0'
+    +     '"count": 1'
     + '},'
     + '{'
     +     '"id": 3,'
@@ -73,12 +74,20 @@ var taskText = '['
     +     '"finish": false,'
     +     '"date": "2015-06-29",'
     +     '"content": "完成 task0002 的编码任务。"'
+    + '},'
+    + '{'
+    +     '"id": 4,'
+    +     '"name": "README",'
+    +     '"cate": 2,'
+    +     '"finish": true,'
+    +     '"date": "2015-04-29",'
+    +     '"content": "欢迎来到Andy的GTD tool(个人任务管理系统)."'
     + '}'
 + ']';
 
 var choosed_cate = -1;
 window.onload = function() {
-    //localStorage.clear();          //remember to delete this line
+    localStorage.clear();          //remember to delete this line
 	if(!localStorage.cate) {
 		localStorage.cate = cateText;
         localStorage.task = taskText;
@@ -405,12 +414,14 @@ function task_edit() {
     EventUtil.addHandler(ok_btn,"click",function(){
         var title = title_edit.getElementsByTagName("input")[0].value;
         var date = date_edit.getElementsByTagName("input")[0].value;
+        console.log(task[i]);
         task[i].name = title;
         task[i].date = date;
         task[i].content = content_edit.value;
+
         save();
         display_detail(title,date,content_edit.value,"detail"+task[i].id);
-    })
+    });
 }
 
 function task_get() {
@@ -471,7 +482,7 @@ function add_task() {
     })
     EventUtil.addHandler(conf_btn,"click",conf_task);
 }
-
+/*确认添加任务*/
 function conf_task() {
     var edit_div = document.getElementById("editDiv");
     var title_edit = document.getElementById("edit-title").getElementsByTagName("input")[0];
@@ -484,7 +495,7 @@ function conf_task() {
         if(cate[i].name === cate_select.value){
             var new_cate = cate[i].id;
             cate[i].count++;  //所在类的task数量+1
-            if(cate[i].father !== -1) {
+            if(cate[i].father !== -1) {    
                 for(var j=0,len=cate.length;j<len;j++) {
                     if(cate[j].id === cate[i].father) {
                         cate[j].count++;  //如果该类有父类，则将父类的task数量+1
