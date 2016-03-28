@@ -45,11 +45,11 @@ var cateText = '['
 var taskText = '['
     + '{'
     +     '"id": 0,'
-    +     '"name": "to-do 1",'
-    +     '"cate": 4,'
+    +     '"name": "README",'
+    +     '"cate": 2,'
     +     '"finish": true,'
-    +     '"date": "2015-05-28",'
-    +     '"content": "开始 task0001 的编码任务。"'
+    +     '"date": "2015-04-29",'
+    +     '"content": "欢迎来到Andy的GTD tool(个人任务管理系统)."'
     + '},'
     + '{'
     +     '"id": 1,'
@@ -77,17 +77,17 @@ var taskText = '['
     + '},'
     + '{'
     +     '"id": 4,'
-    +     '"name": "README",'
-    +     '"cate": 2,'
+    +     '"name": "to-do 1",'
+    +     '"cate": 4,'
     +     '"finish": true,'
-    +     '"date": "2015-04-29",'
-    +     '"content": "欢迎来到Andy的GTD tool(个人任务管理系统)."'
+    +     '"date": "2015-05-28",'
+    +     '"content": "开始 task0001 的编码任务。"'
     + '}'
 + ']';
 
 var choosed_cate = -1;
 window.onload = function() {
-    localStorage.clear();          //remember to delete this line
+    //localStorage.clear();          //remember to delete this line
 	if(!localStorage.cate) {
 		localStorage.cate = cateText;
         localStorage.task = taskText;
