@@ -158,14 +158,16 @@ header {
 	background-color: yellow;
 	width: 300px;
 	height: 200px;
-	border: 10px solid red;
+	border: 1px solid #e6e6e6;
 	border-radius: 5px;
 	display: none;
 	z-index: 10;
 	margin-left: 450px;
 }
-#ok-div .nav-div {
+.nav-div {
 	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
 	background-color: #bde936; 
 	text-align: center;
 }
@@ -185,7 +187,8 @@ header {
 	margin: 80px 10px 0;
 	cursor: pointer;
 	outline: none;
-	border-radius: 10px;
+	border: 1px solid #bde936;
+	border-radius: 5px;
 }
 
 #editDiv {
@@ -218,7 +221,8 @@ header {
 	margin: 20px 20px;
 	cursor: pointer;
 	outline: none;
-	border-radius: 10px;
+	border: 1px solid #bde936;
+	border-radius: 5px;
 }
 #edit-content {
 	width: 100%;
